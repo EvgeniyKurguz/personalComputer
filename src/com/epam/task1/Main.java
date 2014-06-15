@@ -6,7 +6,7 @@ import com.epam.task1.entity.*;
 public class Main {
        public static void main(String[] args){
 
-           ComputerPart part = new CPU("ЦПУ ", "AMD FX", 8350, 8, 3.2, 3, 31600);
+           ComputerPart partOne = new CPU("ЦПУ ", "AMD FX", 8350, 8, 3.2, 3, 31600);
            ComputerPart partTwo = new Videocard(" Видеокарта\n ", "Radeon HD6990,"," PCI Ex 2.0, ", 256, 5.0, 2, 28600);
 
            ComputerPart partThree = new Drive("Дисковод ", "Blu Ray", "SATA", "Внутренний", 8600  );
@@ -32,7 +32,7 @@ public class Main {
            System.out.println(partSeven);
 
            StationaryComputer stationaryComputer = new StationaryComputer();
-           stationaryComputer.addComputerPart(part);
+           stationaryComputer.addComputerPart(partOne);
            stationaryComputer.addComputerPart(partTwo);
            System.out.println("\n" + "Цена компьютера: ");
            stationaryComputer.printCompozition();
