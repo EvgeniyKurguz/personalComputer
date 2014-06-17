@@ -2,46 +2,29 @@ package com.epam.task1.entity;
 
 
 public class CPU extends ComputerPart  {
-   private String name;
+
     private int quantityCore;
     private int version;
     private double frequency; // in Hz;
     private int cacheMemory;
-    private int price;
 
-    public CPU(String componentParts, String name, int version, int quantityCore,  double frequency, int cacheMemory, int price) {
-        super(componentParts);
-        this.setName(name);
+    public CPU(String name, int version, int quantityCore,  double frequency, int cacheMemory, int price) {
+        super(name, price);
+
         this.setQuantityCore(quantityCore);
         this.setVersion(version);
         this.setFrequency(frequency);
         this.setCacheMemory(cacheMemory);
-        this.setPrice(price);
-        this.setComponentParts(componentParts);
+
     }
 
-       @Override
-   public String componentParts() {
-        return componentParts;
-    }
-    public void setComponentParts(String componentParts) {
-        this.componentParts = componentParts;
-        System.out.print(componentParts + "\n");
+    @Override
+    public String name() {
+        return null;
     }
 
-
-  public static int getPrice() {
+    public static int getPrice() {
         return 0;
-    }
-
-    public String getName() {
-        return name;
-
-    }
-
-    public void setName(String name) {
-        this.name = name;
-        System.out.print(name + " ");
     }
 
     public int getQuantityCore() {
@@ -80,8 +63,4 @@ public class CPU extends ComputerPart  {
         System.out.print(" Кэшь " + cacheMemory + " Mb,");
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-        System.out.print(" Цена: " + price + " тенге. ");
-    }
-}
+   }

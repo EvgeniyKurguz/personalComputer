@@ -1,79 +1,96 @@
 package com.epam.task1.entity;
 
 
-public  class Cooler extends ComputerPart  {
-    private String name;
-    private int noiseLevel;// dB
-    private double powerConsumption; // in watt
+public  class Cooler extends ComputerPart {
+
+    private int noiseLevel;
+    private double powerConsumption;
     private int weight;
-    private int price;
 
-    public Cooler(String componentParts, String name, int noiseLevel,double powerConsumption,
-                  int weight, int price) {
-        super(componentParts);
-        this.setName(name);
-        this.setNoiseLevel(noiseLevel);
-        this.setWeight(weight);
-        this.setPrice(price);
+    public Cooler(String name, int price) {
+        super(name, price);
     }
 
-    public String getPeripherals() {
-        return "";
+    public Cooler() {
+
     }
 
     @Override
-   public String componentParts() {
-        return "";
+    public String name() {
+        return null;
     }
 
+    public static class Builder extends Cooler {
+        private int noiseLevel;// dB
+        private double powerConsumption; // in watt
+        private int weight;
 
-   public static int getPrice() {
-        return 0;
-    }
+        public Builder(String name, int price) {
+        }
 
-    public String getName() {
-        return name;
-    }
+        public Builder noiseLevel (int noiseLevel) {
+           this.noiseLevel = noiseLevel;
+            return null;
+        }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+        public Builder powerConsumption(double powerConsumption) {
+            this.powerConsumption = powerConsumption;
+            return null;
+        }
 
-    public int getNoiseLevel() {
-        return noiseLevel;
-    }
+        public Builder weight(int weight) {
+           this.weight = weight;
+           return null;
 
-    public void setNoiseLevel(int noiseLevel) {
-        this.noiseLevel = noiseLevel;
-    }
+        }
 
-    public double getPowerConsumption() {
-        return powerConsumption;
-    }
+        public Cooler Build() {
+            return new Cooler();
+        }
 
-    public void setPowerConsumption(int powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
+        private Builder(Builder builder) {
+            noiseLevel = builder.noiseLevel;
+            powerConsumption = builder.powerConsumption;
+            weight = builder.weight;
+        }
 
-    public int getWeight() {
-        return weight;
-    }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
+        public static int getPrice() {
+            return 0;
+        }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
+        public int getNoiseLevel() {
+            return noiseLevel;
+        }
 
-    @Override
-    public String toString() {
-        return "Cooler: " +
-                "Модель='" + name + '\'' +
-                ", Уровень шума=" + noiseLevel +"дб" +
-                ", Потребляемая мощность=" + powerConsumption + "Вт"+
-                ", Ширина=" + weight +
-                ", price=" + price + " Тенге";
-    }
+        public void setNoiseLevel(int noiseLevel) {
+            this.noiseLevel = noiseLevel;
+        }
+
+        public double getPowerConsumption() {
+            return powerConsumption;
+        }
+
+        public void setPowerConsumption(int powerConsumption) {
+            this.powerConsumption = powerConsumption;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+
+        public void setWeight(int weight) {
+            this.weight = weight;
+        }
+
+        @Override
+        public String toString() {
+            return "Cooler: " +
+                    ", Уровень шума=" + noiseLevel + "дб" +
+                    ", Потребляемая мощность=" + powerConsumption + "Вт" +
+                    ", Ширина=" + weight;
+
+        }
+
+            }
 }

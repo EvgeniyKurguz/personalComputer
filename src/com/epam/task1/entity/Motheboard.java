@@ -2,22 +2,21 @@ package com.epam.task1.entity;
 
 
 public class Motheboard extends ComputerPart {
-    private String name;
+
     private String chipset;
     private String expansionSlots;
-    private String interfaces; // ATA, SATA, RAID
+    private String interfaces;
     private String quantityNestsRam;
     private int maximumValue;
     private String typeRam;
     private String ethernetController;
     private String soundController;
-    private int price;
 
-    public Motheboard(String componentParts,String name, String chipset, String expansionSlots,String interfaces,
+
+    public Motheboard(String name, String chipset, String expansionSlots,String interfaces,
                       String quantityNestsRam, int maximumValue,String typeRam,
                       String ethernetController, String soundController, int price  ) {
-        super(componentParts);
-        this.setName(name);
+        super(name, price);
         this.setChipset(chipset);
         this.setExpansionSlots(expansionSlots);
         this.setInterfaces(interfaces);
@@ -26,16 +25,7 @@ public class Motheboard extends ComputerPart {
         this.setTypeRam(typeRam);
         this.setEthernetController(ethernetController);
         this.setSoundController(soundController);
-        this.setPrice(price);
-    }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getExpansionSlots() {
@@ -102,23 +92,9 @@ public class Motheboard extends ComputerPart {
         this.soundController = soundController;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    String getPeripherals() {
-        return null;
-    }
-
-    @Override
-    public String componentParts() {
-        return null;
-    }
-
-    @Override
+     @Override
     public String toString() {
         return "Материнская плата: " +
-                "Модель='" + name + '\'' +
                 ", Чипсет='" + chipset + '\'' +
                 ", expansionSlots='" + expansionSlots + '\'' +
                 ", Интерфейс='" + interfaces + '\'' + "\n\t\t\t\t" +
@@ -126,7 +102,12 @@ public class Motheboard extends ComputerPart {
                 ", Максимальный объём памяти=" + maximumValue +
                 ", Тип ОЗУ='" + typeRam + '\'' + "\n\t\t\t\t" +
                 "  Сетевой контроллер='" + ethernetController + '\'' +
-                ", Звуковой контроллер='" + soundController + '\'' +
-                ", Цена=" + price +" Тенге;" ;
+                ", Звуковой контроллер='" + soundController + '\'';
+
+    }
+
+    @Override
+    public String name() {
+        return null;
     }
 }

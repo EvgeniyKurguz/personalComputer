@@ -2,32 +2,22 @@ package com.epam.task1.entity;
 
 
 public class Videocard extends ComputerPart {
-    private String name;
-    private String extensionBoard; // PCI, PCI-E, AGP, ISA
+
+    private String extensionBoard;
     private int dataBus; //quantity bit
     private double versionShader;
     private int videoMemory;
-    private int price;
 
-    public Videocard(String componentParts, String name, String extensionBoard,
+
+    public Videocard(String name, String extensionBoard,
                      int dataBus, double versionShader, int videoMemory, int price) {
-        super(componentParts);
-        this.setName(name);
+        super(name, price);
+
         this.setExtensionBoard(extensionBoard);
         this.setDataBus(dataBus);
         this.setVersionShader(versionShader);
         this.setVideoMemory(videoMemory);
-        this.setPrice(price);
-        this.setComponentParts(componentParts);
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-        System.out.print(name);
     }
 
     public String getExtensionBoard() {
@@ -66,29 +56,14 @@ public class Videocard extends ComputerPart {
         System.out.print(" Видеопамять " + videoMemory + "Гб,");
     }
 
-
-    public void setPrice(int price) {
-        this.price = price;
-        System.out.print(" Цена " + price + " Тенге.");
-    }
-
-
-    String getPeripherals() {
-        return "";
-    }
-
-    @Override
-    public String componentParts() {
+         @Override
+    public String name() {
         return null;
     }
 
-
-   public static int getPrice() {
+    public static int getPrice() {
         return 0;
     }
 
-    public void setComponentParts(String componentParts) {
-        this.componentParts = componentParts;
-        System.out.print(componentParts);
-    }
+
 }

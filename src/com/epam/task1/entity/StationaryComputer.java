@@ -4,23 +4,20 @@ package com.epam.task1.entity;
 import java.util.ArrayList;
 
 public class StationaryComputer {
-    private  int price = 0;
-    private ArrayList<String> compozition = new ArrayList<String>();
+    private int price;
+    private ArrayList<ComputerPart> parts = new ArrayList<ComputerPart>();
 
-   public void addComputerPart(ComputerPart computerPart) {
-       price += ComputerPart.getPrice();
-        compozition.add(computerPart.getComponentParts());
+    public void add(ComputerPart computerPart) {
+        price += ComputerPart.getPrice();
+        parts.add(computerPart);
     }
 
-    public int getPrice() {
-        return price;
+    @Override
+    public String toString() {
+        return "StationaryComputer{" +
+                "price=" + price +
+                ", parts=" + parts +
+                '}';
     }
 
-    public void printCompozition() {
-        for (String n : compozition) {
-            System.out.println(" " + n);
-        }
     }
-
-
-}
