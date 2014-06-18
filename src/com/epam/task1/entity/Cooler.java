@@ -12,7 +12,7 @@ public  class Cooler extends ComputerPart {
     }
 
     public Cooler() {
-
+        super();
     }
 
     @Override
@@ -44,9 +44,9 @@ public  class Cooler extends ComputerPart {
 
         }
 
-        public Cooler Build() {
-            return new Cooler();
-        }
+      public Cooler Build() {
+         return new Cooler();
+      }
 
         private Builder(Builder builder) {
             noiseLevel = builder.noiseLevel;
@@ -92,5 +92,6 @@ public  class Cooler extends ComputerPart {
 
         }
 
-            }
+
+    }
 }

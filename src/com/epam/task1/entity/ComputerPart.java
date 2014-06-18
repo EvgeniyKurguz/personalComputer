@@ -5,8 +5,13 @@ package com.epam.task1.entity;
       private String name;
       private int price;
 
-        public void setName(String name) {
+     public ComputerPart() {
+
+     }
+
+     public void setName(String name) {
          this.name = name;
+
      }
 
      @Override
@@ -17,7 +22,7 @@ package com.epam.task1.entity;
                  '}';
      }
 
-     public ComputerPart() {
+     public ComputerPart(String name, int price) {
          this.name = name;
          this.price = price;
      }

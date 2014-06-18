@@ -12,7 +12,11 @@ public class ComputerComparator implements Comparator<ComputerComparator> {
         this.price = price;
     }
 
-      public String getName() {
+    public ComputerComparator() {
+
+    }
+
+    public String getName() {
         return name;
     }
 
