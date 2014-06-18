@@ -3,49 +3,51 @@ package com.epam.task1;
 
 import com.epam.task1.entity.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
 public class Main {
-       public static void main(String[] args){
-         ComputerPart cooler = new Cooler.Builder("Cooler: ", 4200)
-           .noiseLevel(30)
-           .weight(90)
-           .powerConsumption(1.2)
-          .Build();
+    public static void main(String[] args) {
+        {
+            ComputerPart computerPart = new ComputerPart() {
 
-           StationaryComputer stationaryComputer = new StationaryComputer();
-           System.out.println(stationaryComputer);
+                public String name() {
+                    return null;
+                }
+            };
+            computerPart.setName("Videocard");
+            computerPart.setPrice(45000);
+            ComputerPart copy = computerPart.createCopy();
+            System.out.println("copy: " + copy + "\n");
 
-       }
+            Cooler.Builder builder = new Cooler.Builder("Cooler: ", 4200);
+            builder.noiseLevel(30);
+            builder.weight(95);
+            builder.powerConsumption(1.2);
+            ComputerPart cooler = builder.Build();
+            System.out.println(builder);
+
+            StationaryComputer stationaryComputer = new StationaryComputer();
+            System.out.println(stationaryComputer);
+        }
+
+          List<ComputerComparator> computerComparator = new ArrayList<ComputerComparator>();
+
+        computerComparator.add(new ComputerComparator("Videocard", 42000));
+        computerComparator.add(new ComputerComparator("motherboard", 24000));
+        computerComparator.add(new ComputerComparator("CPU", 42000));
+        System.out.println(computerComparator);
+           Collections.sort(computerComparator, (o1, o2) -> o1.getName() - o2.getName());
+
+ }}
+
+            
 
 
 
 
-    /**   ComputerPart partOne = new CPU( "AMD FX", 8350, 8, 3.2, 3, 31600);
-           ComputerPart partTwo = new Videocard( "Radeon HD6990,"," PCI Ex 2.0, ", 256, 5.0, 2, 28600);
-
-           ComputerPart partThree = new Drive( "Blu Ray", "SATA", "Внутренний", 8600  );
-           String s2 = partThree.name();
-           System.out.println(partThree);
-
-           ComputerPart partFour = new PSU( "FSP Group", "SATA", 600, 15200 );
-           String s3 = partFour.name();
-           System.out.println(partFour);
-
-           ComputerPart partFive = new Motheboard("MSI 990FXA-GD80","Socket AM3+","2xPCI Express x16",
-                                      "4xSTA-II RAID 0,1", "4xDDRIII", 32, "DDR III", "1xGigabit Ethernet 1000/100/10 Marvell 88E1111",
-                                      "Creative Sound Blaster Live! 24-bit, 8 каналов",36520);
-           String s4 = partFour.name();
-           System.out.println(partFive);
-
-           ComputerPart partSix = new RAM( "Transcend" ,16, 1333, "DDR III", 1.35, 21450);
-           String s5 = partFour.name();
-           System.out.println(partSix);
-
-           ComputerPart partSeven = new Cooler(" Socket - S1155", 30, 1.2, 95, 4000);
-           String s6 = partFour.name();
-          System.out.println(partSeven);
-           **/
-
-                 }
 
 
 

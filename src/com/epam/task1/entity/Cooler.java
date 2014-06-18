@@ -20,7 +20,7 @@ public  class Cooler extends ComputerPart {
         return null;
     }
 
-    public static class Builder extends Cooler {
+    public static class Builder  {
         private int noiseLevel;// dB
         private double powerConsumption; // in watt
         private int weight;

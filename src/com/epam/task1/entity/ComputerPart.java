@@ -1,25 +1,46 @@
 package com.epam.task1.entity;
 
 
- public abstract class ComputerPart {
+ public abstract class ComputerPart implements Cloneable {
       private String name;
-     //public String componentParts;
-     //private String peripherals;
-     private int price;
+      private int price;
 
-     public ComputerPart(String name, int price) {
-
+        public void setName(String name) {
+         this.name = name;
      }
 
-     protected ComputerPart() {
+     @Override
+     public String toString() {
+         return "ComputerPart{" +
+                 "name='" + name + '\'' +
+                 ", price=" + price +
+                 '}';
+     }
+
+     public ComputerPart() {
+         this.name = name;
+         this.price = price;
+     }
+     public String getName() {
+         return name;
      }
 
      public abstract String name();
 
-     public  static int getPrice(){
+     public static int getPrice() {
          return 0;
      }
 
-
-      }
+     public void setPrice(int price) {
+         this.price = price;
+     }
+     public ComputerPart createCopy()  {
+         try {
+             return (ComputerPart) super.clone();
+         } catch (CloneNotSupportedException e) {
+             e.printStackTrace();
+         }
+         return null;
+     }
+ }
 
